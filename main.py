@@ -19,5 +19,5 @@ def read_items(name: Annotated[list[str] | None, Query()] = None):
   for n in name:
     for item in df:
       if item["name"] == n:
-        res.append(item)
-  return res
+        res.append(item['marks'])
+  return {'marks': res}
