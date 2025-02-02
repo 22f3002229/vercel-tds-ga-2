@@ -1,8 +1,10 @@
 from typing import Annotated
 import json
 from fastapi import FastAPI, Query
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+app.add_middleware(CORSMiddleware, allow_origins=["*"]) # Allow GET requests from all origins
 
 @app.get("/")
 async def root():
